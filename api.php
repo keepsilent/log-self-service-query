@@ -9,6 +9,10 @@ class Log {
         }
     }
 
+    /**
+     * 获取日志
+     * @method getLog
+     */
     public static function getLog(){
         $html = '';
         $path = isset($_POST['path']) ? $_POST['path'] : '';
@@ -36,8 +40,11 @@ class Log {
 
     /**
      * 读取日志
+     * @param {String} $filePath 文件数径
+     * @param {Number} $num 行数
+     * @return {String}
      */
-    private static function readLogs($filePath,$num=20){
+    private static function readLogs($filePath,$num = 20){
         $fp = fopen($filePath,"r");
         $pos = -2;
         $eof = "";
@@ -66,6 +73,10 @@ class Log {
     }
 
 
+    /**
+     * 获取文件
+     * @method getFile
+     */
     public static function getFile() {
         $path = isset($_POST['path']) ? $_POST['path'] : '';
 
@@ -79,9 +90,15 @@ class Log {
 
         $data = []; $i = 0;
         $list = scandir($path);
+
         foreach ($list as $key => $value) {
             if($value == '.' || $value == '..') {
                 continue;
+            }
+
+            $suffix = substr($value,strrpos($value,'.'));
+            if($suffix !== '.log') { //限定.log文件
+                 continue;
             }
 
             $data[$i++] = $value;
