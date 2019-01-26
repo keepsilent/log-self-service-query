@@ -23,7 +23,7 @@
 * 将 {名称} 替换成目录类型
 
 # Bug
-* 无法读取出<xml></xml>包括的数据
+* 无法读取出 xml 包括的数据
 
 ````
 [25-Jan-2019 11:02:20 Asia/Shanghai] [2019-01-25 11:02:20] NULL.DEBUG: Request received: {"method":"POST","uri":"http://www.baidu.com","content-type":"xml","content":"<xml>
