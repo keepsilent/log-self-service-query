@@ -22,6 +22,10 @@ class Log {
             self::msg(1,'','路径不能为空');
         }
 
+        if(!is_readable ($path)) {
+            self::msg(1,'','文件没有读权限');
+        }
+
         if(is_dir($path)) {
             self::msg(1,'','不能读取文件夹');
         }
