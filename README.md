@@ -19,8 +19,8 @@
     <!-- <input type="radio" name="path" value="{目录路径:./log/}" onclick="log.selectPath($(this))" >{名称}-->
 </li>
 ````
-将 {目录路径:./log} 替换成指定目录路径
-将 {名称} 替换成目录类型
+* 将 {目录路径:./log} 替换成指定目录路径
+* 将 {名称} 替换成目录类型
 
 # Bug
 * 无法读取出<xml></xml>包括的数据
